@@ -1,3 +1,8 @@
+Test : approche BDD (Behavior Driven Development)
+pas de fichier app.js, donc je passe l'url d'un serveur live, ce qui n'est pas idéal
+
+
+
 # API Routes Example with CORS
 
 Next.js ships with [API routes](https://nextjs.org/docs/api-routes/introduction) which provides an easy solution to build your own `API`.
