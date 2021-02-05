@@ -12,7 +12,7 @@ const cors = initMiddleware(
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Run cors
-  //await cors(req, res)
+  await cors(req, res)
 
   const {
     query: { params },
