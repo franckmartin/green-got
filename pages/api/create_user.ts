@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Allow only POST method
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST'])
-    res.status(405).json({
+    return res.status(405).json({
       status: 405,
       message: `Method ${req.method} not allowed`
     })
@@ -39,14 +39,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }).validate(req.body)
 
   if (error) {
-    res.status(422).json({
+    return res.status(422).json({
       status: 422,
       message: "Invalid data: " + error
     })
   }
 
   // API logic
-  res.json({ 
+  return res.json({ 
     payload: {
       firstName: req.body.firstName.toUpperCase(),
       lastName: req.body.lastName.toUpperCase()
