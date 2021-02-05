@@ -16,14 +16,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Allow only GET method
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET'])
-    res.status(405).json({
+    return res.status(405).json({
       status: 405,
       message: `Method ${req.method} Not Allowed`
     })
   }
 
   // first_name parameter is mandatory
-  res.status(422).json({
+  return res.status(422).json({
     status: 422,
     message: "Invalid data: You shall give a first_name parameter"
   })

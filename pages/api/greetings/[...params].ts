@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Allow only GET method
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET'])
-    res.status(405).json({
+    return res.status(405).json({
       status: 405,
       message: `Method ${req.method} Not Allowed`
     })
@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Allow only one "first_name" parameter
   if (params.length != 1) {
-    res.status(422).json({
+    return res.status(422).json({
       status: 422,
       message: "Invalid data: Too many parameters"
     })
@@ -45,12 +45,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     .validate(first_name)
 
   if (error) {
-    res.status(422).json({
+    return res.status(422).json({
       status: 422,
       message: "Invalid data: " + error
     })
   }
 
   // API logic
-  res.json({ payload: `Hello ${first_name}!` })
+  return res.json({ payload: `Hello ${first_name}!` })
 }
