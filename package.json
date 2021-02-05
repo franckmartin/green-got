@@ -5,7 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha"
+    "test": "mocha"
   },
   "dependencies": {
     "cors": "2.8.5",

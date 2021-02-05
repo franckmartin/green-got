@@ -2,8 +2,9 @@
 
 ## Code
 
-Cross-origin resource sharing (CORS) is enabled by the [Cors](https://joi.dev/) Express middleware.
-[Joi](https://joi.dev/) schema description language and data validator
+- Cross-origin resource sharing (CORS) is enabled by the [Cors](https://joi.dev/) Express middleware.
+- Request body is validated with [Joi](https://joi.dev/) data validator.
+- The API uses the 200, 404, 405 and 422 status codes. Error messages are sent in the response body.
 
 ## Test
 
@@ -11,10 +12,10 @@ Cross-origin resource sharing (CORS) is enabled by the [Cors](https://joi.dev/) 
 npm run test
 ```
 
-Test are written in a BDD (Behavior Driven Development) fashion, thanks to [Mocha](https://mochajs.org/) test framework and [Chai](https://www.chaijs.com/) assertion library.
-
-pas de fichier app.js, donc je passe l'url d'un serveur live, ce qui n'est pas idéal
+- Tests are written in a BDD (Behavior Driven Development) fashion.
+- Tests are implemented with [Mocha](https://mochajs.org/) test framework and [Chai](https://www.chaijs.com/) assertion library.
+- Testing requires a live server. By default http://localhost:3000, can be updated in .mocharc
 
 ## Live
 
-Deploy it to the cloud with [Vercel](https://green-got-franck.vercel.app/) cloud.
+- A [live version](https://green-got-franck.vercel.app/) is available on the Vercel cloud.

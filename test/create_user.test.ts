@@ -3,8 +3,7 @@ import chaiHttp from 'chai-http'
 
 chai.use(chaiHttp)
 let should = chai.should()
-
-const server = 'http://localhost:3000'
+const server = process.env.TEST_SERVER
 
 describe("/api/create_user", () => {
   it("Accepts only POST method", (done) => {
