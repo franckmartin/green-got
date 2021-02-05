@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "1440d1a7-de7e-468b-b5fd-9ca6c31af37f",
+		"name": "Green Got",
+		"description": "Green Got Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "Greetings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/greetings/aaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"greetings",
+								"aaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"franck\",\r\n    \"lastName\": \"Martin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/create_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"create_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/a/b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"a",
+								"b"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Vercel",
+			"item": [
+				{
+					"name": "Greetings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://green-got-franck.vercel.app/api/greetings/aaa",
+							"protocol": "https",
+							"host": [
+								"green-got-franck",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"greetings",
+								"aaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"franck\",\r\n    \"lastName\": \"Martin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://green-got-franck.vercel.app/api/create_user",
+							"protocol": "https",
+							"host": [
+								"green-got-franck",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"create_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://green-got-franck.vercel.app/api/a/b",
+							"protocol": "https",
+							"host": [
+								"green-got-franck",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"a",
+								"b"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

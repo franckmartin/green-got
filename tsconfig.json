@@ -21,8 +21,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "test/api/create_user.test.js"  ],
+    "**/*.tsx",
+    "test/api/create_user.test.js"
+  ],
   "exclude": [
     "node_modules"
   ]

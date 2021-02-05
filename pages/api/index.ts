@@ -15,6 +15,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   res.status(404).json({
     status: 404,
-    message: `Resource ${req.query.unknown} not found`
+    message: `Resource not found`
   })
 }

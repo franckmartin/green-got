@@ -3,25 +3,9 @@ import Joi from 'joi'
 import Cors from 'cors'
 import initMiddleware from '../../lib/init-middleware'
 
-const schema = Joi.object({
-  firstName: Joi.string()
-    .alphanum()
-    .min(3)
-    .max(30)
-    .required(),
-
-  lastName: Joi.string()
-    .alphanum()
-    .min(3)
-    .max(30)
-    .required()
-})
-
 // Initialize the cors middleware
 const cors = initMiddleware(
-  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
   Cors({
-    // Only allow requests with GET, POST and OPTIONS
     methods: ['POST', 'OPTIONS'],
   })
 )
@@ -35,26 +19,33 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Allow', ['POST'])
     res.status(405).json({
       status: 405,
-      message: `Method ${req.method} Not Allowed`
+      message: `Method ${req.method} not allowed`
     })
   }
 
-  if (!req.body) {
+  // Validate request body against JSON schema
+  const { error, value } = Joi.object({
+    firstName: Joi.string()
+      .alphanum()
+      .min(2)
+      .max(30)
+      .required(),
+  
+    lastName: Joi.string()
+      .alphanum()
+      .min(2)
+      .max(30)
+      .required()
+  }).validate(req.body)
+
+  if (error) {
     res.status(422).json({
       status: 422,
-      message: "Invalid data"
+      message: "Invalid data: " + error
     })
   }
 
-  // const { error, value } = schema.validate(req.body)
-  if (schema.validate(req.body).error) {
-    res.status(422).json({
-      status: 422,
-      message: "Invalid data" + schema.validate(req.body).error
-    })
-  }
-
-  // Rest of the API logic
+  // API logic
   res.json({ 
     payload: {
       firstName: req.body.firstName.toUpperCase(),

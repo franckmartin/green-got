@@ -1,28 +1,20 @@
-Test : approche BDD (Behavior Driven Development)
-pas de fichier app.js, donc je passe l'url d'un serveur live, ce qui n'est pas idéal
+# Green Got | Technical Test
 
+## Code
 
+Cross-origin resource sharing (CORS) is enabled by the [Cors](https://joi.dev/) Express middleware.
+[Joi](https://joi.dev/) schema description language and data validator
 
-# API Routes Example with CORS
+## Test
 
-Next.js ships with [API routes](https://nextjs.org/docs/api-routes/introduction) which provides an easy solution to build your own `API`.
-
-This example shows how to create an `API` endpoint with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers, using the [cors](https://github.com/expressjs/cors) package.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors&project-name=api-routes-cors&repository-name=api-routes-cors)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example api-routes-cors api-routes-cors-app
-# or
-yarn create next-app --example api-routes-cors api-routes-cors-app
+```shell
+npm run test
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Test are written in a BDD (Behavior Driven Development) fashion, thanks to [Mocha](https://mochajs.org/) test framework and [Chai](https://www.chaijs.com/) assertion library.
+
+pas de fichier app.js, donc je passe l'url d'un serveur live, ce qui n'est pas idéal
+
+## Live
+
+Deploy it to the cloud with [Vercel](https://green-got-franck.vercel.app/) cloud.

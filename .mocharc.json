@@ -1,0 +1,6 @@
+{  
+    "spec": "pages/api",
+    "extension": ["test.ts", "test.js"],
+    "recursive": true,
+    "require": "ts-node/register"
+}
